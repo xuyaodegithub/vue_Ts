@@ -47,7 +47,7 @@
         @Prop(Number) d: number | undefined;
         @Ref('resfs') resfs: any;//ref写法
         @Getter('ag') getterAg: any;
-        @Action('agActions') agActions: void;
+        @Action('agActions') agActions: any;
         $refs!: {
             input: any,
             resfs: any,
