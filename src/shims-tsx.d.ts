@@ -1,4 +1,5 @@
-import Vue, { VNode } from "vue";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Vue, { VNode } from 'vue'
 
 declare global {
   namespace JSX {
@@ -7,7 +8,13 @@ declare global {
     // tslint:disable no-empty-interface
     interface ElementClass extends Vue {}
     interface IntrinsicElements {
-      [elem: string]: any;
+      [elem: string]: any
     }
+  }
+}
+
+declare module 'vue/types/options' {
+  interface ComponentOptions<V extends Vue> {
+    [propName: string]: any
   }
 }

@@ -1,1 +1,1 @@
-declare module 'js-cookie' { export const cookies: any  = cookies }
+declare module 'js-cookie' { export const cookies: any }
