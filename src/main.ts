@@ -5,7 +5,7 @@ import store from './store'
 
 import {
   Button,
-    Tag,
+  Tag,
   Select,
   Message,
   Popover,
