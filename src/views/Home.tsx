@@ -1,8 +1,9 @@
 import { Vue, Component } from 'vue-property-decorator'
-import { Getter } from 'vuex-class'
+// import { Getter } from 'vuex-class'
 import cookies from 'js-cookie'
 import style from './index.less'
-import ScrollBar from '@/components/ScrollSub'
+
+// import ScrollBar from '@/components/ScrollSub'
 
 @Component({})
 class App extends Vue {
@@ -32,25 +33,30 @@ class App extends Vue {
       tag: '公司',
     },
   ]
+
   private mounted() {
     const time = new Date(Date.now() + 24 * 60 * 60 * 1000)
     cookies.set('aa', 123, { expires: time })
   }
+
   protected render(h: any) {
     return (
       <div style={{ height: '100%' }} class={style.home}>
-        <el-table ref="filterTable" data={this.tableData} style="width: 100%">
+        <el-table ref="filterTable" data={this.tableData} style={{ width: '100%' }}>
           <el-table-column
             prop="date"
             label="日期"
             width="180"
             {...{
               scopedSlots: {
-                header:(scope: any) => {
+                header(scope: any) {
                   return (
-                    <el-popover placement="bottom" width="400" trigger="click" >
-                      <h1>你好</h1>
-                      <span slot="reference">{scope.column.label}<i class="el-icon-connection"></i></span>
+                    <el-popover placement="bottom" trigger="click">
+                      <i>你好</i>
+                      <span class="cu" slot="reference">
+                        {scope.column.label}
+                        <i class="el-icon-connection" />
+                      </span>
                     </el-popover>
                   )
                 },
@@ -65,7 +71,7 @@ class App extends Vue {
             width="100"
             {...{
               scopedSlots: {
-                default:(scope: any) => {
+                default(scope: any) {
                   return (
                     <el-tag type={scope.row.tag === '家' ? 'primary' : 'success'} disable-transitions>
                       {scope.row.tag}
