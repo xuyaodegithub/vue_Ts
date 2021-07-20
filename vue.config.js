@@ -138,6 +138,7 @@ module.exports = {
   crossorigin: 'anonymous',
   chainWebpack(config) {
     config.optimization.minimizer('terser').tap(args => {
+      // 生成环境去除console.log debgger、注释等
       args[0].terserOptions.compress.drop_console = true
       args[0].terserOptions.compress.drop_debugger = true
       args[0].cache = true
@@ -175,6 +176,9 @@ module.exports = {
     elementCssRule
       .test(/\.css$/)
       .include.add(resolve('./node_modules/element-ui'))
+      .end()
+      .test(/\.css$/)
+      .include.add(resolve('./node_modules/@esign-component/sign-h5-ui'))
       .end()
     types.forEach(({ oneof, query }) =>
       elementCssLoader(query ? elementCssRule.oneOf(oneof).resourceQuery(query) : elementCssRule.oneOf(oneof))

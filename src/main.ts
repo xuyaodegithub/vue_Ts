@@ -3,6 +3,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import '@/assets/less/marOrpadd.less'
+import '@/assets/less/cssReset.less'
 import {
   Button,
   Tag,

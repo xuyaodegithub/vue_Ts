@@ -15,6 +15,7 @@
     "generate": "node scripts/generate.js"
   },
   "dependencies": {
+    "@esign-component/sign-h5-ui": "^1.0.85",
     "@esign/client-jssdk": "^0.1.6",
     "@tsign/tsign-http": "^2.1.0-beta.2",
     "@tsign/tsigndata-sdk-js": "^1.1.4",
@@ -44,7 +45,7 @@
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-plugin-component": "^1.1.1",
     "identity-obj-proxy": "^3.0.0",
-    "less": "^3.0.4",
+    "less": "^3.13.1",
     "less-loader": "^5.0.0",
     "typescript": "~3.8.3",
     "vue-template-compiler": "^2.6.11",

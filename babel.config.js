@@ -8,5 +8,13 @@ module.exports = {
         styleLibraryName: 'theme-chalk',
       },
     ],
+    [
+      'component',
+      {
+        libraryName: '@esign-component/sign-h5-ui',
+        style: true,
+      },
+      '@esign-component/sign-h5-ui',
+    ],
   ],
 }
